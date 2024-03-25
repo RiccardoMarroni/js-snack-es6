@@ -166,3 +166,96 @@ const {model,weight} = lightestBike
 console.log(bicicle)
 console.log(lightestBike)
 console.log(`La piu' leggera e' la ${model} con un peso di ${weight}kg`)
+
+
+
+/*SNACK 4
+Creare un array di oggetti di squadre di calcio.
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console. */
+
+console.log('Snack 4')
+
+function generateSquad(squadName, pointsSquad, PenaltySquad) {
+    const squad = {
+        squad: squadName,
+        points: pointsSquad,
+        penatlty: PenaltySquad,
+
+    };
+
+    return squad;
+}
+
+let squads = [
+    {
+        name: 'Juventus',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Inter',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Lazio',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Roma',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Fiorentina',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Atalanta',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Sampdoria',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Torino',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Milan',
+        points: 0,
+        penalty: 0
+    },
+    {
+        name: 'Lecce',
+        points: 0,
+        penalty: 0
+    }
+];
+
+console.log('squadre :',squads)
+
+
+
+squads.forEach((squad) =>{
+    squad.points = Math.floor(Math.random() * 30)
+    squad.penalty = Math.floor(Math.random() * 7)
+})
+
+const {name,points,penalty}=squads
+
+const squadNameAndPenalty = squads.map(({name,penalty}) =>{
+    return `la squadra ${name} e ha ${penalty} falli`
+})
+
+console.log(squadNameAndPenalty)
+
