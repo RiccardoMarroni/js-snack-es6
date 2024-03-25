@@ -23,7 +23,7 @@ const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo',
 'Georgina Rodriguez', 'Chiara Ferragni', 
 'Fedez', 'George Clooney',
  'Maneskin'];
- 
+
 const TavoloVIP = invitati.map((el,idx) =>{
     const vip = generateTable(el,'Tavolo VIP',idx + 1)
     return vip;
@@ -32,3 +32,60 @@ const TavoloVIP = invitati.map((el,idx) =>{
 
 
 console.log(TavoloVIP);
+
+
+
+/**SNACK 2*
+Abbiamo un elenco degli studenti di una facoltà, identificati da id, Nome e somma totale dei loro voti di esame...
+1. Per preparare l’aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti: creare una lista contenente il loro nome tutto in maiuscolo
+ES (Marco della Rovere => MARCO DELLA ROVERE);
+2. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70
+3. Dobbiamo creare una lista di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+Questo è l’elenco degli studenti:
+Id   Name                    Grades
+213  Marco della Rovere      78
+110  Paola Cortellessa       96
+250  Andrea Mantegna 	      48
+145  Gaia Borromini          74
+196  Luigi Grimaldello 	  68
+102  Piero della Francesca   50
+120  Francesca da Polenta    84 */
+
+
+
+let studentiUpperCase = [];
+
+let voto70 = [];
+
+let voto70Id120 = [];
+
+
+let studenti = [
+    {id:213, nome:'Marco della Rovere',voto:78},
+    {id:110, nome:'Paola Cortellessa',voto:96},
+    {id:250, nome:'Andrea Mantegna',voto:48},
+    {id:145, nome:'Gaia Borromini',voto:74},
+    {id:196, nome:'Luigi Grimaldello',voto:68},
+    {id:102, nome:'Piero della Francesca',voto:50},
+    {id:120, nome:'Francesca da Polenta',voto:84},
+];
+
+
+studentiUpperCase = studenti.map((el) => {
+    let studente = {
+        id: el.id,
+        nome: el.nome.toUpperCase(),
+        voto: el.voto
+    }
+
+    
+    return studente
+})
+
+voto70 = studentiUpperCase.filter((el) =>{return el.voto > 70} )
+voto70Id120 = studentiUpperCase.filter((el) =>{return el.voto > 70 && el.id > 120} )
+
+
+console.log(studentiUpperCase);
+console.log('array con solo voto > 70:', voto70);
+console.log('array con voto > 70 e ID >120:', voto70Id120);
